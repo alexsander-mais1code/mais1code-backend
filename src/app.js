@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const postagensRoutes = require('./routes/postagem-route');
 const contatosRoutes = require('./routes/contato-route');
+const personagensRoutes = require('./routes/personagem-route');
 
 app.use(express.urlencoded({extended: true})); 
 app.use(express.json());
@@ -16,4 +17,7 @@ app.use(function (req, res, next) {
 
 app.use('/api/postagens', postagensRoutes);
 app.use('/api/contatos', contatosRoutes);
+
+app.use('/api/personagens', personagensRoutes);
+
 module.exports = app;
